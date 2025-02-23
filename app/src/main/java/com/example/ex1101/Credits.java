@@ -13,7 +13,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity implements View.OnCreateContextMenuListener
+public class Credits extends AppCompatActivity implements View.OnCreateContextMenuListener
 {
     Intent gi;
 
@@ -21,7 +21,8 @@ public class MainActivity extends AppCompatActivity implements View.OnCreateCont
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_credits);
+        gi = getIntent();
     }
 
     /**
@@ -45,11 +46,14 @@ public class MainActivity extends AppCompatActivity implements View.OnCreateCont
     public boolean onOptionsItemSelected(@NonNull MenuItem menuItem)
     {
         String st = menuItem.getTitle().toString();
-        if (st.charAt(0) == 'C')
+        if (st.charAt(0) == 'M')
         {
-            gi = new Intent(this, Credits.class);
-            startActivity(gi);
+            finish();
         }
         return super.onOptionsItemSelected(menuItem);
     }
+
+
+
+
 }
